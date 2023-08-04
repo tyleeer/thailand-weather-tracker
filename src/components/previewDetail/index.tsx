@@ -175,9 +175,11 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
                 </div>
                 <span className="flex items-center w-full justify-end uppercase text-[1rem] font-semibold">
                   <Link
-                    to={`/weather/${reName(fetchDataSelected.data?.name)}/${
-                      fetchDataSelected.data?.lat
-                    }/${fetchDataSelected.data?.lon}`}
+                    to={`/thailand-weather-tracker/weather/${reName(
+                      fetchDataSelected.data?.name
+                    )}/${fetchDataSelected.data?.lat}/${
+                      fetchDataSelected.data?.lon
+                    }`}
                     onClick={() => {
                       showDetail("close"), clearSelection();
                     }}
@@ -190,7 +192,7 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
                   </Link>
                 </span>
                 <Link
-                  to={"/"}
+                  to={"/thailand-weather-tracker/"}
                   className="absolute top-3 right-3"
                   onClick={() => {
                     showDetail("close"), clearSelection(), toTop();

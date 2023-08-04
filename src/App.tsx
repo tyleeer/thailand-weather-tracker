@@ -8,19 +8,19 @@ import Detail from "@/pages/detail";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/thailand-weather-tracker/",
       element: <Homepage />,
     },
     {
-      path: "/weather/history",
+      path: "/thailand-weather-tracker/weather/history",
       element: <History />,
     },
     {
-      path: "/weather/ranking",
+      path: "/thailand-weather-tracker/weather/ranking",
       element: <Ranking />,
     },
     {
-      path: `/weather/:name/:lat/:lon`,
+      path: `/thailand-weather-tracker/weather/:name/:lat/:lon`,
       element: <Detail />,
     },
   ]);

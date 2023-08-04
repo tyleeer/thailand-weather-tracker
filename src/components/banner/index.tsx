@@ -8,7 +8,7 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
       className={`relative navbar w-full h-full text-white p-[20px] transition-all`}
     >
       <div className="navbar-start p-2">
-        <Link to="/">
+        <Link to="/thailand-weather-tracker/">
           <img
             src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
             alt="OpenWheather_logo"
@@ -40,20 +40,23 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
               className="absolute right-0 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-1"
             >
               <li className="">
-                <a
-                  // href="/"
-                  className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:bg-[rgb(71,85,105)] hover:text-white hover:cursor-default"
-                >
+                <a className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:bg-[rgb(71,85,105)] hover:text-white hover:cursor-default">
                   main
                 </a>
               </li>
               <li className="">
-                <a href="/weather/history" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/history"
+                  className="py-[10px] capitalize"
+                >
                   weather history
                 </a>
               </li>
               <li className="">
-                <a href="/weather/ranking" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/ranking"
+                  className="py-[10px] capitalize"
+                >
                   weather ranking
                 </a>
               </li>
@@ -75,20 +78,23 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
               className="absolute right-0 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-1"
             >
               <li className="">
-                <a href="/" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/"
+                  className="py-[10px] capitalize"
+                >
                   main
                 </a>
               </li>
               <li className="">
-                <a href="/weather/history" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/history"
+                  className="py-[10px] capitalize"
+                >
                   weather history
                 </a>
               </li>
               <li className="">
-                <a
-                  // href="/weather/ranking"
-                  className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:cursor-default hover:bg-[rgb(71,85,105)] hover:text-white"
-                >
+                <a className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:cursor-default hover:bg-[rgb(71,85,105)] hover:text-white">
                   weather ranking
                 </a>
               </li>
@@ -110,20 +116,23 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
               className="absolute right-0 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-1"
             >
               <li className="">
-                <a href="/" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/"
+                  className="py-[10px] capitalize"
+                >
                   main
                 </a>
               </li>
               <li className="">
-                <a
-                  // href="/weather/history"
-                  className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:bg-[rgb(71,85,105)] hover:text-white hover:cursor-default"
-                >
+                <a className="py-[10px] capitalize bg-[rgb(71,85,105)] hover:bg-[rgb(71,85,105)] hover:text-white hover:cursor-default">
                   weather history
                 </a>
               </li>
               <li className="">
-                <a href="/weather/ranking" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/ranking"
+                  className="py-[10px] capitalize"
+                >
                   weather ranking
                 </a>
               </li>
@@ -145,17 +154,26 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
               className="absolute right-0 menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 space-y-1"
             >
               <li className="">
-                <a href="/" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/"
+                  className="py-[10px] capitalize"
+                >
                   main
                 </a>
               </li>
               <li className="">
-                <a href="/weather/history" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/history"
+                  className="py-[10px] capitalize"
+                >
                   weather history
                 </a>
               </li>
               <li className="">
-                <a href="/weather/ranking" className="py-[10px] capitalize">
+                <a
+                  href="/thailand-weather-tracker/weather/ranking"
+                  className="py-[10px] capitalize"
+                >
                   weather ranking
                 </a>
               </li>
@@ -178,20 +196,23 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
         {trackPage === "homePage" ? (
           <ul className="menu menu-horizontal px-1 space-x-2 text-shadow--black">
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a
-                // href="/"
-                className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default"
-              >
+              <a className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default">
                 main
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/history" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/history"
+                className="capitalize"
+              >
                 weather history
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/ranking" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/ranking"
+                className="capitalize"
+              >
                 weather ranking
               </a>
             </li>
@@ -199,20 +220,20 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
         ) : trackPage === "rankingPage" ? (
           <ul className="menu menu-horizontal px-1 space-x-2">
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/" className="capitalize">
+              <a href="/thailand-weather-tracker/" className="capitalize">
                 main
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/history" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/history"
+                className="capitalize"
+              >
                 weather history
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a
-                // href="/weather/ranking"
-                className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default"
-              >
+              <a className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default">
                 weather ranking
               </a>
             </li>
@@ -220,20 +241,20 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
         ) : trackPage === "historyPage" ? (
           <ul className="menu menu-horizontal px-1 space-x-2">
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/" className="capitalize">
+              <a href="/thailand-weather-tracker/" className="capitalize">
                 main
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a
-                // href="/weather/history"
-                className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default"
-              >
+              <a className="capitalize bg-[rgb(255,255,255,0.2)] hover:bg-[rgb(255,255,255,0.2)] hover:text-white hover:cursor-default">
                 weather history
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/ranking" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/ranking"
+                className="capitalize"
+              >
                 weather ranking
               </a>
             </li>
@@ -241,17 +262,23 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
         ) : (
           <ul className="menu menu-horizontal px-1 space-x-2">
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/" className="capitalize">
+              <a href="/thailand-weather-tracker/" className="capitalize">
                 main
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/history" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/history"
+                className="capitalize"
+              >
                 weather history
               </a>
             </li>
             <li className="text-[24px] lg:text-[20px] xl:text-[24px]">
-              <a href="/weather/ranking" className="capitalize">
+              <a
+                href="/thailand-weather-tracker/weather/ranking"
+                className="capitalize"
+              >
                 weather ranking
               </a>
             </li>
