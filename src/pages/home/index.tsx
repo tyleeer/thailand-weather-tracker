@@ -25,7 +25,7 @@ const Homepage = () => {
     useAllWeatherDataStore();
 
   const home = document.getElementById("home__page") as HTMLDivElement;
-  const banner = document.getElementById("banner__component");
+  const banner = document.getElementById("banner__component") as HTMLDivElement;
   let preScrollTop = 0;
 
   function setBannerByScroll() {
@@ -51,8 +51,8 @@ const Homepage = () => {
     const allLocationData: coordinateLocationRespon = [];
     const checkRepeated: any = [];
 
-    setAllLocation({ data: undefined, loading: true, error: null });
-    setFetchAllLocation({ data: undefined, loading: true, error: null });
+    setAllLocation({ data: undefined, loading: true, error: undefined });
+    setFetchAllLocation({ data: undefined, loading: true, error: undefined });
 
     for (const province of all_province) {
       const response = await coordinateLocationService.getCoordinateLocation(
@@ -116,7 +116,7 @@ const Homepage = () => {
           loading: false,
           error: response.error,
         });
-        shownAlert(response.error.message);
+        shownAlert("Error. 404");
         return;
       }
     }
@@ -125,11 +125,11 @@ const Homepage = () => {
       "allThaiProvincesLocation",
       JSON.stringify(allLocationData)
     );
-    setAllLocation({ data: allLocationData, loading: false, error: null });
+    setAllLocation({ data: allLocationData, loading: false, error: undefined });
     setFetchAllLocation({
       data: allLocationData,
       loading: false,
-      error: null,
+      error: undefined,
     });
   };
 
@@ -214,11 +214,15 @@ const Homepage = () => {
     if (savedTHLocationStr) {
       const savedTHLocation = JSON.parse(savedTHLocationStr);
 
-      setAllLocation({ data: savedTHLocation, loading: false, error: null });
+      setAllLocation({
+        data: savedTHLocation,
+        loading: false,
+        error: undefined,
+      });
       setFetchAllLocation({
         data: savedTHLocation,
         loading: false,
-        error: null,
+        error: undefined,
       });
     } else if (!fetchAllLocation.data) {
       getLocation();

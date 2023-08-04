@@ -6,13 +6,13 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 
 interface getCoordinateLocationRespon {
   status: number | undefined;
-  data: coordinateLocationRespon;
+  data: coordinateLocationRespon | undefined;
   error?: AxiosResponse | AxiosError<AxiosResponse> | undefined;
 }
 
 interface getReverseCoordsLocationRespon {
   status: number | undefined;
-  data: reverseCoordsLocationList[];
+  data: reverseCoordsLocationList[] | undefined;
   error: AxiosResponse | AxiosError<AxiosResponse> | undefined;
 }
 

@@ -75,7 +75,7 @@ export const SearchBar = () => {
           error: null,
         });
       } else {
-        shownAlert(response.error.message);
+        shownAlert("Error. 404");
         return;
       }
     } else if (key.length === 0) {
@@ -129,9 +129,7 @@ export const SearchBar = () => {
               );
               return;
             } else {
-              shownAlert(
-                `${response.error?.message} CODE: ${response.error?.code}`
-              );
+              shownAlert("Error. 404");
               return;
             }
           }

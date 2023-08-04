@@ -1,5 +1,4 @@
 import { Daily } from "@/interface/weatherDataResponse";
-// import { useEffect, useState } from "react";
 import { RxCalendar } from "react-icons/rx";
 import { MdWaterDrop } from "react-icons/md";
 import { RiArrowRightDoubleFill } from "react-icons/ri";
@@ -26,10 +25,6 @@ type attrType = { daily: Daily[] };
 export const DailyForcast = ({ daily }: attrType) => {
   function hourAndMinTime(value: number) {
     const time = new Date(value * 1000).toDateString();
-    return time;
-  }
-  function hourTime(value: number) {
-    const time = new Date(value * 1000).toLocaleTimeString().substring(0, 2);
     return time;
   }
 

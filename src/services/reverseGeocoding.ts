@@ -4,7 +4,7 @@ import { responseHandler } from "@/utils/handleResponse";
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 interface getReverseGrocodingResponse {
-  status: number;
+  status: number | undefined;
   data: reverseGrocodingResponse;
   error: AxiosResponse | AxiosError<AxiosResponse> | undefined;
 }

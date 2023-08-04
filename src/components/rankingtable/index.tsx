@@ -331,7 +331,7 @@ export const RankingTable = () => {
                   </td>
                   <td className="border border-black capitalize">
                     {i.name
-                      .toLowerCase()
+                      ?.toLowerCase()
                       .replace("city", "")
                       .replace("municipality", "")
                       .replace("town", "")

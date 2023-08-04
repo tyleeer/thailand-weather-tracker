@@ -22,7 +22,7 @@ const Detail = () => {
   const lon_coordinate = parseFloat(lon ? lon : "0");
   const { setFetchWeatherData, fetchWeatherData } = useWeatherDataStore();
   const detail = document.getElementById("detail__page") as HTMLDivElement;
-  const banner = document.getElementById("banner__component");
+  const banner = document.getElementById("banner__component") as HTMLDivElement;
   let preScrollTop = 0;
 
   function setBannerByScroll() {

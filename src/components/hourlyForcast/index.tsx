@@ -2,12 +2,7 @@ import { Daily, Rain, Weather2 } from "@/interface/weatherDataResponse";
 import sunrise_color from "@/img/sunrise_arrow2.png";
 import sunset_color from "@/img/sunset_arrow2.png";
 import { useEffect, useState } from "react";
-import {
-  BsFillSunsetFill,
-  BsSunrise,
-  BsSunriseFill,
-  BsSunset,
-} from "react-icons/bs";
+import { BsSunrise, BsSunset } from "react-icons/bs";
 import { LuClock } from "react-icons/lu";
 
 interface Hourly {
@@ -38,9 +33,6 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
   const twentyfourHourData: Hourly[] | sunEvent[] = [];
   const hourNewData: Hourly[] | sunEvent[] = [];
   const [hourData, setHourData] = useState<any>(undefined);
-  // const [hourData, setHourData] = useState<Hourly[] | sunEvent[] | undefined>(
-  //   undefined
-  // );
 
   const today = daily[0];
   const tomorrow = daily[1];
@@ -80,8 +72,6 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
     hourNewData.sort((a, b) => a.dt - b.dt);
     setHourData(hourNewData);
   }
-
-  // console.log(hourData);
 
   useEffect(() => {
     startRender();

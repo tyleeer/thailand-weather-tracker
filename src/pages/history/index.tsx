@@ -79,7 +79,7 @@ const History = () => {
       setFetchGPSData({ data: undefined, loading: false, error: null });
       return;
     } else {
-      shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
+      shownAlert("Error. 404");
       setFetchGPSData({ data: undefined, loading: false, error: null });
     }
   };
@@ -105,7 +105,7 @@ const History = () => {
         setFetchLocationData({ data: [], loading: false, error: null });
         return;
       } else {
-        shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
+        shownAlert("Error. 404");
         setFetchLocationData({ data: [], loading: false, error: null });
       }
     } else if (key.length === 0) {

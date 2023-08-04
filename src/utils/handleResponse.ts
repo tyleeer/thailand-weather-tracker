@@ -3,7 +3,7 @@ import { weatherDataResponse } from "@/interface/weatherDataResponse";
 
 export interface errorReponseType {
   status: number | undefined;
-  data: weatherDataResponse | undefined;
+  data: weatherDataResponse | undefined | any;
   error: AxiosResponse | AxiosError<AxiosResponse> | undefined;
 }
 

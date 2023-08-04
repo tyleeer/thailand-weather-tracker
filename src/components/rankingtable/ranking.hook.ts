@@ -6,12 +6,7 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export const useRanking = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, watch } = useForm();
 
   const { sortName, sortTemp, sortHumi, sortSunr, sortSuns } =
     useSortingStore();
@@ -28,27 +23,6 @@ export const useRanking = () => {
       .replace("-", " ")
       .trim();
   }
-
-  // const setData = (province: string[]) => {
-  //   const provincesWeatherData: weatherDataResponse[] = [];
-
-  //   for (const name of province) {
-  //     fetchAllWeatherData.data?.filter((item) => {
-  //       const fetchName = dltsomestr(item.name).toLowerCase().replace(/ /g, "");
-  //       const inputName = name.toLowerCase().replace(/ /g, "");
-
-  //       if (fetchName.includes(inputName)) {
-  //         provincesWeatherData.push(item);
-  //       }
-  //     });
-  //   }
-
-  //   setAllWeatherData({
-  //     data: provincesWeatherData,
-  //     loading: false,
-  //     error: null,
-  //   });
-  // };
 
   function searchName(
     region: string,

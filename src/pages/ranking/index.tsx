@@ -56,8 +56,8 @@ const Ranking = () => {
     const allProvinceData: weatherDataResponse[] = [];
     const checkRepeated: any = [];
 
-    setAllWeatherData({ data: [], loading: true, error: null });
-    setFetchAllWeatherData({ data: [], loading: true, error: null });
+    setAllWeatherData({ data: [], loading: true, error: undefined });
+    setFetchAllWeatherData({ data: [], loading: true, error: undefined });
 
     for (const item of LocationList) {
       if (item.country === "TH") {
@@ -85,31 +85,31 @@ const Ranking = () => {
                 shownAlert(
                   "Please contact the project owner and try again next time. Sorry for any inconvenience."
                 );
-                setAllWeatherData({ data: [], loading: false, error: null });
+                setAllWeatherData({ data: [], loading: false, error: undefined });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
-                  error: null,
+                  error: undefined,
                 });
                 return;
               } else if (dataRespon.status === 429) {
                 shownAlert(
                   "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
                 );
-                setAllWeatherData({ data: [], loading: false, error: null });
+                setAllWeatherData({ data: [], loading: false, error: undefined });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
-                  error: null,
+                  error: undefined,
                 });
                 return;
               } else {
                 shownAlert(dataRespon.error.message);
-                setAllWeatherData({ data: [], loading: false, error: null });
+                setAllWeatherData({ data: [], loading: false, error: undefined });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
-                  error: null,
+                  error: undefined,
                 });
                 return;
               }
@@ -120,11 +120,11 @@ const Ranking = () => {
     }
 
     setWithExpiry("allThaiProvincesWeather", allProvinceData, 10);
-    setAllWeatherData({ data: allProvinceData, loading: false, error: null });
+    setAllWeatherData({ data: allProvinceData, loading: false, error: undefined });
     setFetchAllWeatherData({
       data: allProvinceData,
       loading: false,
-      error: null,
+      error: undefined,
     });
   };
 
@@ -132,8 +132,8 @@ const Ranking = () => {
     const allLocationData: coordinateLocationRespon = [];
     const checkRepeated: any = [];
 
-    setAllLocation({ data: [], loading: true, error: null });
-    setFetchAllLocation({ data: [], loading: true, error: null });
+    setAllLocation({ data: [], loading: true, error: undefined });
+    setFetchAllLocation({ data: [], loading: true, error: undefined });
 
     for (const province of all_province) {
       const response = await coordinateLocationService.getCoordinateLocation(
@@ -160,20 +160,20 @@ const Ranking = () => {
         shownAlert(
           "Please contact the project owner and try again next time. Sorry for any inconvenience."
         );
-        setAllLocation({ data: [], loading: false, error: null });
-        setFetchAllLocation({ data: [], loading: false, error: null });
+        setAllLocation({ data: [], loading: false, error: undefined });
+        setFetchAllLocation({ data: [], loading: false, error: undefined });
         return;
       } else if (response.status === 429) {
         shownAlert(
           "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
         );
-        setAllLocation({ data: [], loading: false, error: null });
-        setFetchAllLocation({ data: [], loading: false, error: null });
+        setAllLocation({ data: [], loading: false, error: undefined });
+        setFetchAllLocation({ data: [], loading: false, error: undefined });
         return;
       } else {
-        shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
-        setAllLocation({ data: [], loading: false, error: null });
-        setFetchAllLocation({ data: [], loading: false, error: null });
+        shownAlert("Error. 404");
+        setAllLocation({ data: [], loading: false, error: undefined });
+        setFetchAllLocation({ data: [], loading: false, error: undefined });
       }
     }
 
@@ -181,11 +181,11 @@ const Ranking = () => {
       "allThaiProvincesLocation",
       JSON.stringify(allLocationData)
     );
-    setAllLocation({ data: allLocationData, loading: false, error: null });
+    setAllLocation({ data: allLocationData, loading: false, error: undefined });
     setFetchAllLocation({
       data: allLocationData,
       loading: false,
-      error: null,
+      error: undefined,
     });
   };
 
@@ -246,12 +246,12 @@ const Ranking = () => {
       setAllWeatherData({
         data: savedTHWeather,
         loading: false,
-        error: null,
+        error: undefined,
       });
       setFetchAllWeatherData({
         data: savedTHWeather,
         loading: false,
-        error: null,
+        error: undefined,
       });
     } else if (savedTHLocationStr) {
       const savedTHLocation = JSON.parse(savedTHLocationStr);
@@ -301,7 +301,7 @@ const Ranking = () => {
         >
           <BiSolidArrowToTop />
         </button>
-      ) : null}
+      ) : undefined}
       {fetchAllWeatherData.loading && (
         <div className="z-50 flex justify-center items-center fixed top-0 bottom-0 right-0 left-0 h-[100%] w-[100%] bg-[rgb(255,255,255,0.2)]">
           <ReactLoading

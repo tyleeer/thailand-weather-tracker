@@ -6,35 +6,35 @@ const initAllData = {
   allLocation: {
     data: undefined,
     loading: false,
-    error: null,
+    error: undefined,
   },
   fetchAllLocation: {
     data: undefined,
     loading: false,
-    error: null,
+    error: undefined,
   },
   allWeatherData: {
     data: undefined,
     loading: false,
-    error: null,
+    error: undefined,
   },
   fetchAllWeatherData: {
     data: undefined,
     loading: false,
-    error: null,
+    error: undefined,
   },
 };
 
 type locationType = {
   data: coordinateLocationRespon | undefined;
   loading: boolean;
-  error: null;
+  error: undefined | any;
 };
 
 export type allWeatherDataType = {
   data: weatherDataResponse[] | undefined;
   loading: boolean;
-  error: null;
+  error: undefined;
 };
 
 export type useAllWeatherDataStoreType = {
