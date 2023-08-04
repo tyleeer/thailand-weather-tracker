@@ -1,8 +1,9 @@
 import { weatherDataResponse } from "@/interface/weatherDataResponse";
 import { weatherDataService } from "@/services";
+import { API_KEY } from "./config";
 
 export const OPENWEATHER_BASE_URL = "https://api.openweathermap.org";
-export const API_KEY = "8eef37bd7a3925ed16021d90622bfe73";
+export { API_KEY };
 export const limit = 5;
 type itemType = {
   value: weatherDataResponse[];
@@ -110,6 +111,11 @@ export async function getWatchlistWithExpiry(key: string) {
 
         if (dataRespon.status === 200) {
           newWeatherData.push({ ...dataRespon.data, name: name });
+        } else if (dataRespon.status === 401) {
+          shownAlert(
+            "Please contact the project owner and try again next time. Sorry for any inconvenience."
+          );
+          return;
         } else if (dataRespon.status === 429) {
           shownAlert(
             "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"

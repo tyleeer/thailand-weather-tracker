@@ -62,6 +62,26 @@ const Detail = () => {
         loading: false,
         error: null,
       });
+    } else if (response.status === 401) {
+      shownAlert(
+        "Please contact the project owner and try again next time. Sorry for any inconvenience."
+      );
+      setFetchWeatherData({
+        data: undefined,
+        loading: false,
+        error: null,
+      });
+      return;
+    } else if (response.status === 429) {
+      shownAlert(
+        "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
+      );
+      setFetchWeatherData({
+        data: undefined,
+        loading: false,
+        error: null,
+      });
+      return;
     } else {
       shownAlert(response.error.message);
       setFetchWeatherData({

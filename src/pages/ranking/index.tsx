@@ -81,6 +81,17 @@ const Ranking = () => {
                   name: item.name,
                   local_name: item.local_names.th,
                 });
+              } else if (dataRespon.status === 401) {
+                shownAlert(
+                  "Please contact the project owner and try again next time. Sorry for any inconvenience."
+                );
+                setAllWeatherData({ data: [], loading: false, error: null });
+                setFetchAllWeatherData({
+                  data: [],
+                  loading: false,
+                  error: null,
+                });
+                return;
               } else if (dataRespon.status === 429) {
                 shownAlert(
                   "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
@@ -145,6 +156,20 @@ const Ranking = () => {
             }
           }
         }
+      } else if (response.status === 401) {
+        shownAlert(
+          "Please contact the project owner and try again next time. Sorry for any inconvenience."
+        );
+        setAllLocation({ data: [], loading: false, error: null });
+        setFetchAllLocation({ data: [], loading: false, error: null });
+        return;
+      } else if (response.status === 429) {
+        shownAlert(
+          "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
+        );
+        setAllLocation({ data: [], loading: false, error: null });
+        setFetchAllLocation({ data: [], loading: false, error: null });
+        return;
       } else {
         shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
         setAllLocation({ data: [], loading: false, error: null });

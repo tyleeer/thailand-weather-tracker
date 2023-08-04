@@ -118,6 +118,11 @@ export const SearchBar = () => {
                   response.data[0]?.local_names.th ||
                   response.data[0]?.local_names.en,
               });
+            } else if (response.status === 401) {
+              shownAlert(
+                "Please contact the project owner and try again next time. Sorry for any inconvenience."
+              );
+              return;
             } else if (response.status === 429) {
               shownAlert(
                 "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"

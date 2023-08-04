@@ -75,6 +75,36 @@ const Homepage = () => {
             }
           }
         }
+      } else if (response.status === 401) {
+        shownAlert(
+          "Please contact the project owner and try again next time. Sorry for any inconvenience."
+        );
+        setAllLocation({
+          data: undefined,
+          loading: false,
+          error: response.error,
+        });
+        setFetchAllLocation({
+          data: undefined,
+          loading: false,
+          error: response.error,
+        });
+        return;
+      } else if (response.status === 429) {
+        shownAlert(
+          "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
+        );
+        setAllLocation({
+          data: undefined,
+          loading: false,
+          error: response.error,
+        });
+        setFetchAllLocation({
+          data: undefined,
+          loading: false,
+          error: response.error,
+        });
+        return;
       } else {
         setAllLocation({
           data: undefined,

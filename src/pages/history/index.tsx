@@ -72,6 +72,12 @@ const History = () => {
 
     if (response.status === 200) {
       setFetchGPSData({ data: response.data[0], loading: false, error: null });
+    } else if (response.status === 401) {
+      shownAlert(
+        "Please contact the project owner and try again next time. Sorry for any inconvenience."
+      );
+      setFetchGPSData({ data: undefined, loading: false, error: null });
+      return;
     } else {
       shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
       setFetchGPSData({ data: undefined, loading: false, error: null });
@@ -92,6 +98,12 @@ const History = () => {
           loading: false,
           error: null,
         });
+      } else if (response.status === 401) {
+        shownAlert(
+          "Please contact the project owner and try again next time. Sorry for any inconvenience."
+        );
+        setFetchLocationData({ data: [], loading: false, error: null });
+        return;
       } else {
         shownAlert(`${response.error?.message} CODE: ${response.error?.code}`);
         setFetchLocationData({ data: [], loading: false, error: null });
@@ -142,6 +154,16 @@ const History = () => {
           loading: false,
           error: null,
         });
+      } else if (response.status === 401) {
+        shownAlert(
+          "Please contact the project owner and try again next time. Sorry for any inconvenience."
+        );
+        setFetchHistoricalData({
+          data: undefined,
+          loading: false,
+          error: null,
+        });
+        return;
       } else if (response.status === 429) {
         shownAlert(
           "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
