@@ -4,7 +4,6 @@ import History from "@/pages/history";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Detail from "@/pages/detail";
 // import { useEffect } from "react";
-import "./App.scss";
 
 function App() {
   const router = createBrowserRouter([
