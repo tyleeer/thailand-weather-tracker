@@ -1,3 +1,34 @@
+.landscape--media3 {
+    height: 15dvh;
+}
+
+@media (max-height: 500px) and (min-width: 700px) and (orientation: landscape) {
+    .landscape--media3 {
+        height: 20dvh;
+}
+}
+
+.landscape--media2 {
+    height: 45dvh;
+}
+
+@media (max-height: 500px) and (min-width: 700px) and (orientation: landscape) {
+    .landscape--media2 {
+        height: 75dvh;
+}
+}
+
+.landscape--media {
+    display: flex;
+    align-items: flex-end;
+}
+
+@media (max-height: 500px) and (min-width: 700px) and (orientation: landscape) {
+  .landscape--media {
+    display: none;
+  }
+}
+
 .scroll--dec::-webkit-scrollbar {
     width: 5px;
     height: 5px;
@@ -16,7 +47,6 @@
 #selection__container {
     height: 0;
     opacity: 0;
-    width: 50%;
     display: flex;
     margin: auto;
 }
@@ -27,7 +57,7 @@
 
 #search__container {
     height: 100%;
-    padding-top: 40%
+    padding-top: 25%
     
 }
 
@@ -55,7 +85,7 @@
 @keyframes fadeOut {
     to {
         height: 15%;
-        padding-top: 12%;
+        padding-top: 17%;
     }
 }
 
@@ -68,7 +98,7 @@
 @media screen and (min-width: 500px) {
     #search__container {
             height: 100%;
-            padding-top: min(30%,150px);
+            padding-top: min(30%,120px);
         }
         @keyframes fadeOut {
             to {
@@ -121,7 +151,7 @@
         @keyframes fadeOut {
             to {
                 height: 15%;
-                padding-top: 6%;
+                padding-top: 10%;
             }
         }
         @keyframes fadeIn {

@@ -2,7 +2,6 @@ import { useCoordinateStore } from "@/storage/coordinateStore";
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
 import { useAllWeatherDataStore } from "@/storage/allWeatherDataStore";
-import { AiOutlineGlobal } from "react-icons/ai";
 import { coordinateLocationService } from "@/services";
 import { useSelectionStore } from "@/storage/selectionStore";
 import { reName, shownAlert } from "@/utils";
@@ -140,7 +139,7 @@ export const SearchBar = () => {
         (error) => {
           // Handle errors, e.g. user denied location sharing permissions
           console.error("Error getting user location:", error);
-          shownAlert(`Error getting user location:, ${error}`);
+          shownAlert("Failed to get your location. Permission is needed.");
         }
       );
     } else {
@@ -190,13 +189,13 @@ export const SearchBar = () => {
         id="search__container--bar"
         className="w-full flex justify-center items-center gap-[10px]"
       >
-        <div className="absolute text-center -top-2 right-2 scale-[80%] flex items-center text-black md:right-7 md:scale-100 bg-[rgb(0,0,0,0.2)] p-2 rounded-xl">
+        <div className="absolute text-center -top-2 right-2 scale-[80%] flex items-center gap-x-1 text-black md:right-7 md:scale-100 bg-[rgb(0,0,0,0.2)] p-2 rounded-xl">
           {globalSearch === "off" ? (
-            <span className="mr-1 font-semibold text-[1.2rem] text-white rounded-full">
-              TH
+            <span className="font-semibold text-[1.2rem] text-white">
+              Thailand
             </span>
           ) : (
-            <span className="mr-1 font-semibold text-[1.2rem]">TH</span>
+            <span className="font-semibold text-[1.2rem]">Thailand</span>
           )}
           <input
             id="toggle_switch"
@@ -206,9 +205,11 @@ export const SearchBar = () => {
             data-theme="light"
           />
           {globalSearch === "off" ? (
-            <AiOutlineGlobal className="text-[30px]" />
+            <span className="font-semibold text-[1.2rem]">Global</span>
           ) : (
-            <AiOutlineGlobal className="text-[30px] text-white" />
+            <span className="font-semibold text-[1.2rem] text-white ">
+              Global
+            </span>
           )}
         </div>
         <div className="relative max-w-[700px] w-full md:max-w-[1000px] flex justify-between items-center border-[2px] border-white bg-white focus-within:border-[rgb(235,110,75)] rounded-[15px] shadow-lg">
@@ -325,10 +326,10 @@ export const SearchBar = () => {
         id="search__container--des"
         className="flex flex-col items-center w-full text-white text-shadow--black"
       >
-        <p className="text-[0.4rem] font-semibold sm:text-[0.8rem] lg:text-[1.2rem]">
+        <p className="text-[1rem] font-semibold lg:text-[1.2rem]">
           By default, only search for cities in Thailand.
         </p>
-        <p className="text-[0.4rem] font-semibold sm:text-[0.8rem] lg:text-[1.2rem]">
+        <p className="text-[1rem] text-center font-semibold lg:text-[1.2rem]">
           You can toggle the switch on the top-right side to search for cities
           globally.
         </p>

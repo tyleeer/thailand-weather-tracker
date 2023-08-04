@@ -92,6 +92,9 @@ const Detail = () => {
     }
   };
 
+  const isEvening =
+    Number(new Date().toLocaleTimeString().substring(0, 2)) > 19;
+
   useEffect(() => {
     callAPI(lat_coordinate, lon_coordinate);
   }, [lat, lon]);
@@ -122,34 +125,57 @@ const Detail = () => {
             id="current__container"
             className="w-full md:hidden flex flex-col gap-8 capitalize"
           >
-            <div className="flex flex-col w-full items-center text-shadow--white">
-              {name && name.length > 12 ? (
+            {isEvening ? (
+              <div className="flex flex-col w-full items-center font-semibold text-white text-shadow--black">
                 <span className="text-[2.7rem]">{name}</span>
-              ) : (
-                <span className="text-[3rem]">{name}</span>
-              )}
-              <span className="font-semibold text-[4rem] flex">
-                <span>
-                  {fetchWeatherData.data &&
-                    fetchWeatherData.data.current.temp.toFixed(0)}
+                <span className="font-semibold text-[4rem] flex">
+                  <span>
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.current.temp.toFixed(0)}
+                  </span>
+                  <span>°</span>
                 </span>
-                <span>°</span>
-              </span>
-              <span className="normal-case text-[1.2rem] flex gap-1">
-                <span>
-                  H:{" "}
-                  {fetchWeatherData.data &&
-                    fetchWeatherData.data.daily[0].temp.max.toFixed(0)}
-                  °
+                <span className="normal-case text-[1.2rem] flex gap-1">
+                  <span>
+                    H:{" "}
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.daily[0].temp.max.toFixed(0)}
+                    °
+                  </span>
+                  <span>
+                    L:{" "}
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.daily[0].temp.min.toFixed(0)}
+                    °
+                  </span>
                 </span>
-                <span>
-                  L:{" "}
-                  {fetchWeatherData.data &&
-                    fetchWeatherData.data.daily[0].temp.min.toFixed(0)}
-                  °
+              </div>
+            ) : (
+              <div className="flex flex-col w-full items-center font-semibold">
+                <span className="text-[2.7rem]">{name}</span>
+                <span className="font-semibold text-[4rem] flex">
+                  <span>
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.current.temp.toFixed(0)}
+                  </span>
+                  <span>°</span>
                 </span>
-              </span>
-            </div>
+                <span className="normal-case text-[1.2rem] flex gap-1">
+                  <span>
+                    H:{" "}
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.daily[0].temp.max.toFixed(0)}
+                    °
+                  </span>
+                  <span>
+                    L:{" "}
+                    {fetchWeatherData.data &&
+                      fetchWeatherData.data.daily[0].temp.min.toFixed(0)}
+                    °
+                  </span>
+                </span>
+              </div>
+            )}
             <div className="grid grid-cols-2 gap-2">
               <div className="relative scroll--dec min-w-[350px] bg-[rgb(255,255,255,0.8)] col-span-2 rounded-[10px] max-h-[220px] py-2 overflow-x-auto overflow-y-hidden">
                 {fetchWeatherData.data && (
@@ -164,7 +190,7 @@ const Detail = () => {
                   <DailyForcast daily={fetchWeatherData.data.daily} />
                 )}
               </div>
-              <div className="min-h-[170px] bg-[rgb(255,255,255,0.8)] relative w-full h-full aspect-square rounded-[10px] px-5 py-3">
+              <div className="min-h-[170px] relative bg-[rgb(255,255,255,0.8)] w-full h-full aspect-square rounded-[10px] px-5 py-3">
                 {fetchWeatherData.data &&
                   (fetchWeatherData.data.current.dt >
                   fetchWeatherData.data.current.sunrise ? (
@@ -330,13 +356,23 @@ const Detail = () => {
                 </span>
               </div>
               <div className="w-full col-span-2 text-center">
-                <a
-                  href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
-                  target="_blank"
-                  className="underline normal-case visited:text-blue-700"
-                >
-                  {`open weather maps of ${name?.toLowerCase()}`}
-                </a>
+                {isEvening ? (
+                  <a
+                    href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
+                    target="_blank"
+                    className="underline normal-case visited:text-blue-700 text-white"
+                  >
+                    {`open weather maps of ${name?.toLowerCase()}`}
+                  </a>
+                ) : (
+                  <a
+                    href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
+                    target="_blank"
+                    className="underline normal-case visited:text-blue-700"
+                  >
+                    {`open weather maps of ${name?.toLowerCase()}`}
+                  </a>
+                )}
               </div>
             </div>
           </div>
@@ -346,12 +382,7 @@ const Detail = () => {
           >
             <div className="relative flex flex-col w-full h-[70%] self-end justify-self-start col-span-2 lg:col-span-2 lg:row-span-2 bg-[rgb(255,255,255,0.8)] rounded-[10px] overflow-hidden">
               <div className="flex items-center justify-between px-4 py-1 lg:py-4">
-                {name && name?.length >= 8 ? (
-                  <span className="text-[1.8rem] font-semibold">{name}</span>
-                ) : (
-                  <span className="text-[3rem] font-semibold">{name}</span>
-                )}
-                <span className="text-[3rem] font-semibold"></span>
+                <span className="text-[1.8rem] font-semibold">{name}</span>
                 <div className="relative flex flex-col text-[1.1rem]">
                   <span>
                     {fetchWeatherData.data &&
@@ -415,7 +446,7 @@ const Detail = () => {
               )}
             </div>
             <div className="lg:col-span-2 col-span-4 grid grid-cols-4 lg:grid-cols-2 lg:row-span-4 gap-5 mt-5 lg:mt-0">
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden aspect-square rounded-[10px] px-2 py-2">
                 {fetchWeatherData.data &&
                   (fetchWeatherData.data.current.dt <
                   fetchWeatherData.data.current.sunrise ? (
@@ -454,7 +485,7 @@ const Detail = () => {
                       </span>
                       <img
                         src={sunrisepic2}
-                        className="aspect-square w-full absolute left-0 -bottom-4 scale-[50%]"
+                        className="aspect-square w-full absolute left-0 bottom-0 scale-[50%]"
                       />
                       <span className="absolute bottom-2 capitalize text-[0.9rem]">
                         sunset:{" "}
@@ -466,7 +497,7 @@ const Detail = () => {
                     </>
                   ))}
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   feels like
                 </span>
@@ -479,7 +510,7 @@ const Detail = () => {
                   Humidity effects human perception to feel warmer
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   humidity
                 </span>
@@ -495,7 +526,7 @@ const Detail = () => {
                   ° right now
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   cloudiness
                 </span>
@@ -509,7 +540,7 @@ const Detail = () => {
                   day
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   pressure
                 </span>
@@ -522,7 +553,7 @@ const Detail = () => {
                   Atmospheric pressure on the sea level
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   visibility
                 </span>
@@ -535,7 +566,7 @@ const Detail = () => {
                   Average visibility (the maximum value is 10km)
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   uv index
                 </span>
@@ -567,7 +598,7 @@ const Detail = () => {
                     : "You can safely enjoy being outside"}
                 </span>
               </div>
-              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full justify-between aspect-square rounded-[10px] px-2 py-2">
+              <div className="relative bg-[rgb(255,255,255,0.8)] flex flex-col w-full h-full min-h-[200px] overflow-hidden justify-between aspect-square rounded-[10px] px-2 py-2">
                 <span className="w-full sticky top-0 font-semibold uppercase">
                   wind
                 </span>
@@ -582,13 +613,23 @@ const Detail = () => {
               </div>
             </div>
             <div className="w-full text-center col-span-4 lg:col-span-6">
-              <a
-                href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
-                target="_blank"
-                className="underline normal-case visited:text-blue-700"
-              >
-                {`open weather maps of ${name?.toLowerCase()}`}
-              </a>
+              {isEvening ? (
+                <a
+                  href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
+                  target="_blank"
+                  className="underline normal-case visited:text-blue-700 text-white"
+                >
+                  {`open weather maps of ${name?.toLowerCase()}`}
+                </a>
+              ) : (
+                <a
+                  href={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=temperature&lat=${lat_coordinate}&lon=${lon_coordinate}&zoom=10`}
+                  target="_blank"
+                  className="underline normal-case visited:text-blue-700"
+                >
+                  {`open weather maps of ${name?.toLowerCase()}`}
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -30,7 +30,7 @@ const Homepage = () => {
 
   function setBannerByScroll() {
     const currentScrollTop = home.scrollTop;
-    if (home.scrollTop > banner.offsetHeight) {
+    if (home.scrollTop > banner.offsetHeight / 2) {
       if (currentScrollTop > preScrollTop) {
         banner?.classList.add("-translate-y-[100%]");
       }
@@ -43,8 +43,8 @@ const Homepage = () => {
 
   function setOpacBanner() {
     if (home.scrollTop > 0) {
-      banner?.classList.add("bg-[rgb(0,0,0,0.4)]");
-    } else banner?.classList.remove("bg-[rgb(0,0,0,0.4)]");
+      banner?.classList.add("bg-[rgb(0,0,0,0.2)]");
+    } else banner?.classList.remove("bg-[rgb(0,0,0,0.2)]");
   }
 
   const getLocation = async () => {
@@ -237,7 +237,7 @@ const Homepage = () => {
         setBannerByScroll(), setOpacBanner();
       }}
       id="home__page"
-      className="scroll--dec relative h-[100dvh] overflow-y-auto scroll-smooth"
+      className="scroll--dec min-h-[100dvh] relative overflow-y-auto scroll-smooth"
     >
       {fetchAllLocation.loading && (
         <div className="z-50 flex justify-center items-center fixed top-0 bottom-0 right-0 left-0 h-[100dvh] w-[100vw] bg-[rgb(100,100,100,0.4)]">
@@ -251,29 +251,29 @@ const Homepage = () => {
       )}
       <div
         id="alert__container"
-        className="w-[100dvw] z-20 fixed -top-[20%] transition-all duration-500 ease-out"
+        className="w-[100dvw] z-30 fixed -top-[20%] transition-all duration-500 ease-out"
       >
         <Alert />
       </div>
       <div className="-z-10 w-[100dvw] flex h-[100dvh] fixed top-0">
         <Background />
       </div>
-      <div className="sticky top-0 z-10 h-[15%] starting__animation--first initiator">
+      <div className="sticky top-0 z-20 landscape--media3 starting__animation--first initiator">
         <Banner trackPage={"homePage"} />
       </div>
       <div
         id="weather__container"
-        className="h-[45%] starting__animation--second initiator"
+        className="landscape--media2 starting__animation--second initiator"
       >
         <SearchBar />
         <PreviewDetail showDetail={(e: string) => showDetailHanddler(e)} />
       </div>
-      <div className="h-[35%] flex items-end starting__animation--third initiator">
+      <div className="h-[35dvh] landscape--media starting__animation--third initiator">
         {fetchAllLocation.data && (
           <RandomWeather showDetail={(e: string) => showDetailHanddler(e)} />
         )}
       </div>
-      <div className="h-[5%] text-black starting__animation--fourth initiator">
+      <div className="h-[5dvh] text-black starting__animation--fourth initiator">
         <Contact />
       </div>
     </div>

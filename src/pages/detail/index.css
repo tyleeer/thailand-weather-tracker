@@ -14,7 +14,7 @@
     display: none;
 }
 
-.text-shadow--white {
-    text-shadow: 2px 2px 5px white;
+.text-shadow--black {
+    text-shadow: 1px 1px 5px black;
 }
 

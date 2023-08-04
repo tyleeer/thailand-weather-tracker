@@ -8,7 +8,6 @@ import { FaSearchLocation } from "react-icons/fa";
 import { useHistoricalDataStore } from "@/storage/historyStore";
 import ReactLoading from "react-loading";
 import { coordinateLocationList } from "@/interface/coordinateLocationRespon";
-import { AiOutlineGlobal } from "react-icons/ai";
 import error404 from "@/img/404.png";
 import "./index.css";
 import { Banner } from "@/components/banner";
@@ -284,7 +283,7 @@ const History = () => {
           (error) => {
             // Handle errors, e.g. user denied location sharing permissions
             console.error("Error getting user location:", error);
-            shownAlert(`Error getting user location:, ${error}`);
+            shownAlert("Failed to get your location. Permission is needed.");
             setErrorGPS(error);
           }
         );
@@ -412,7 +411,7 @@ const History = () => {
                   placeholder="e.g. Bangkok, กรุงเทพ..."
                   className="w-full bg-transparent h-[40px] outline-none px-[20px] rounded-full"
                 />
-                <ul className="z-10 scroll--dec absolute w-full h-[25dvh] overflow-y-auto text-xs md:text-base">
+                <ul className="z-10 scroll--dec absolute w-full max-h-[25dvh] overflow-y-auto text-xs md:text-base">
                   {!fetchLocationData.loading ? (
                     fetchLocationData.data?.map((i, index) => {
                       return (
@@ -459,10 +458,10 @@ const History = () => {
               <div className="flex items-center">
                 {globalSearch === "off" ? (
                   <span className="mr-1 font-semibold text-[rgb(235,110,75)]">
-                    TH
+                    Thai
                   </span>
                 ) : (
-                  <span className="mr-1 font-semibold">TH</span>
+                  <span className="mr-1 font-semibold">Thai</span>
                 )}
                 <input
                   id="toggle_switch"
@@ -472,9 +471,11 @@ const History = () => {
                   data-theme="light"
                 />
                 {globalSearch === "off" ? (
-                  <AiOutlineGlobal className="text-[30px]" />
+                  <span className="ml-1 font-semibold">Global</span>
                 ) : (
-                  <AiOutlineGlobal className="text-[30px] text-[rgb(235,110,75)]" />
+                  <span className="ml-1 font-semibold text-[rgb(235,110,75)]">
+                    Global
+                  </span>
                 )}
               </div>
             </div>

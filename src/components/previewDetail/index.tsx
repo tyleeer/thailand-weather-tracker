@@ -3,7 +3,6 @@ import { ImCross } from "react-icons/im";
 import { BiWater, BiSolidSun, BiWind } from "react-icons/bi";
 import { GoTriangleRight } from "react-icons/go";
 import { useEffect } from "react";
-// import { useWeatherDataStore } from "@/storage/weatherDataStore";
 import { weatherDataService } from "@/services";
 import { useSelectionStore } from "@/storage/selectionStore";
 import ReactLoading from "react-loading";
@@ -77,11 +76,6 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
     }
   };
 
-  function toTop() {
-    const topEle = document.getElementById("home__page") as HTMLDivElement;
-    topEle.scrollTo(0, 0);
-  }
-
   useEffect(() => {
     if (lat && lon) {
       callAPI(lat, lon);
@@ -91,7 +85,7 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
   return (
     <div
       id="selection__container"
-      className="w-full max-h-[580px] flex justify-center items-start"
+      className="w-full max-h-[580px] z-10 absolute top-[30%] flex justify-center items-start"
     >
       {fetchDataSelected.loading ? (
         <div className="m-auto">
@@ -195,7 +189,7 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
                   to={"/thailand-weather-tracker/"}
                   className="absolute top-3 right-3"
                   onClick={() => {
-                    showDetail("close"), clearSelection(), toTop();
+                    showDetail("close"), clearSelection();
                   }}
                 >
                   <ImCross className="text-red-600" />

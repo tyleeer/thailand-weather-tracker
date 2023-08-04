@@ -65,7 +65,7 @@ export const DailyForcast = ({ daily }: attrType) => {
                   />
                   {i.weather[0].main.toLowerCase().includes("rain") ? (
                     <span className="text-[0.8rem] -translate-y-2">
-                      {i.pop * 100}%
+                      {(i.pop * 100).toFixed(0)}%
                     </span>
                   ) : null}
                 </div>
@@ -122,7 +122,7 @@ export const DailyForcast = ({ daily }: attrType) => {
                     />
                     {i.weather[0].main.toLowerCase().includes("rain") ? (
                       <span className="text-[0.8rem] -translate-y-2 font-semibold">
-                        {i.pop * 100}%
+                        {(i.pop * 100).toFixed(0)}%
                       </span>
                     ) : null}
                   </div>
