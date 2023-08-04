@@ -1,0 +1,19 @@
+.resize--blinking{
+    animation: resize 2000ms ease-out infinite;
+}
+
+@keyframes resize {
+    0% {
+        scale: 100%;
+    }
+    50%{
+        scale: 85%
+    }
+    100% {
+        scale: 100%;
+    }
+}
+
+.text-shadow--black {
+    text-shadow: 1px 1px 5px black;
+}

@@ -1,0 +1,19 @@
+/* .scroll--dec {
+    height: 100dvh;
+    overflow-y: hidden;
+} */
+
+/* .scroll--dec::-webkit-scrollbar {
+    display: block;
+    width: 5px;
+    display: none;
+} */
+
+/* .scroll--dec::-webkit-scrollbar-thumb {
+    background: #EB6E4B;
+    border-radius: 10px;
+} */
+/* 
+.scroll--dec::-webkit-scrollbar-corner {
+    display: none;
+} */

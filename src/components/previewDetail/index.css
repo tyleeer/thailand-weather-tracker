@@ -1,0 +1,12 @@
+.animated-bounce {
+    animation: bouncing 2s ease-in-out infinite;
+}
+
+@keyframes bouncing {
+    0%,100% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+}

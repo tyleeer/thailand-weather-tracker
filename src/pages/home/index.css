@@ -1,0 +1,207 @@
+.scroll--dec::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: rgb(0, 0, 0, 0.4);
+}
+
+.scroll--dec::-webkit-scrollbar-thumb {
+    background: #f35d33;
+    border-radius: 10px;
+}
+
+.scroll--dec::-webkit-scrollbar-corner {
+    display: none;
+}
+
+#selection__container {
+    height: 0;
+    opacity: 0;
+    width: 50%;
+    display: flex;
+    margin: auto;
+}
+
+#weather__container {
+    max-height: 700px;
+}
+
+#search__container {
+    height: 100%;
+    padding-top: 40%
+    
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out 0.5s forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 0.5s ease-out 0.5s forwards;
+}
+
+.expand {
+    animation: expandHeight 0.5s ease-out 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        padding-top: 2%;
+        height: 85%;
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        height: 15%;
+        padding-top: 12%;
+    }
+}
+
+@keyframes expandHeight {
+    to {
+        height: 75%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    #search__container {
+            height: 100%;
+            padding-top: min(30%,150px);
+        }
+        @keyframes fadeOut {
+            to {
+                height: 15%;
+                padding-top: 8%;
+            }
+        }
+        @keyframes fadeIn {
+            to {
+                padding-top: 0%;
+                height: 85%;
+                width: 100%;
+                opacity: 1;
+            }
+        }
+        @keyframes expandHeight {
+            to {
+                height: 125dvw;
+            }
+        }
+}
+
+@media screen and (min-width: 640px) {    
+        @keyframes fadeOut {
+            to {
+                height: 15%;
+                padding-top: 7%;
+            }
+        }
+        @keyframes expandHeight {
+            to {
+                height: 130dvw;
+            }
+        }
+        @keyframes fadeIn {
+            to {
+                padding-top: 0%;
+                height: 85%;
+                width: 100%;
+                opacity: 1;
+            }
+        }
+}
+
+@media screen and (min-width: 768px) {
+        #search__container {
+                height: 100%;
+                padding-top: 20%;
+            }
+        @keyframes fadeOut {
+            to {
+                height: 15%;
+                padding-top: 6%;
+            }
+        }
+        @keyframes fadeIn {
+            to {
+                padding-top: 1%;
+                height: 85%;
+                width: 100%;
+                opacity: 1;
+            }
+        }
+        @keyframes expandHeight {
+            to {
+                height: 85dvw;
+            }
+        }
+}
+
+@media screen and (min-width: 1024px) {
+        #search__container {
+                height: 100%;
+                padding-top: 10%;
+            }
+         @keyframes fadeIn {
+             to {
+                 padding-top: 2%;
+                 height: 85%;
+                 width: 100%;
+                 opacity: 1;
+             }
+         }
+    
+         @keyframes fadeOut {
+             to {
+                 height: 15%;
+                 padding-top: 5%;
+             }
+         }
+
+        @keyframes expandHeight {
+            to {
+                height: 65dvw;
+            }
+        }
+}
+
+@media screen and (min-width: 1280px) {
+    @keyframes fadeIn {
+        to {
+            padding-top: 0%;
+            height: 80%;
+            width: 100%;
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        to {
+            height: 20%;
+            padding-top: 5%;
+        }
+    }
+}
+
+.initiator {
+    opacity: 0;
+    transform: translateY(10%);
+}
+
+.initialize {
+    animation: starting 1000ms ease-out;
+}
+
+@keyframes starting {
+    from {
+        opacity: 0.1;
+        transform: translateY(10%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}

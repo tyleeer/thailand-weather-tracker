@@ -1,0 +1,72 @@
+.primary--bg {
+    animation: primary 50s linear infinite;
+}
+
+.secondary--bg {
+    animation: secondary 50s linear infinite;
+}
+
+.primary--bg__phone {
+    scale: 150%;
+    animation: primary 15s linear infinite;
+}
+
+.secondary--bg__phone {
+    scale: 150%;
+    animation: secondary 15s linear infinite;
+}
+
+.primary--bg__additional {
+    animation: primary 20s linear infinite;
+}
+
+.secondary--bg__additional {
+    animation: secondary 20s linear infinite;
+}
+
+.primary--bg2 {
+    animation: primary 100s linear infinite;
+}
+
+.primary--bg2__phone {
+    animation: primary 25s linear infinite;
+}
+
+.primary--bg3 {
+    animation: primary 200s linear infinite;
+}
+
+.primary--bg3__phone {
+    animation: primary 35s linear infinite;
+}
+
+.secondary--bg3__phone {
+    animation: secondary 35s linear infinite;
+}
+
+.secondary--bg2 {
+    animation: secondary 100s linear infinite;
+}
+
+.secondary--bg2__phone {
+    animation: secondary 25s linear infinite;
+}
+
+@keyframes primary {
+    from {
+        left: 0%
+    }
+
+    to {
+        left: -100%
+    }
+}
+
+@keyframes secondary {
+    from {
+        left: 100%
+    }
+    to {
+        left: 0%
+    }
+}

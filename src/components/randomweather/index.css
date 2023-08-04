@@ -1,0 +1,116 @@
+.text-shadow--black {
+    text-shadow: 1px 1px 5px black;
+}
+
+.scroll-parent {
+    position: relative;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+}
+
+.scroll-element {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    gap: 10px;
+}
+
+.primary {
+    animation: primary0 40s linear infinite;
+}
+
+@keyframes primary0 {
+    from {
+        left: 0%
+    }
+
+    to {
+        left: -570%
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .primary {
+            animation: primary500 30s linear infinite;
+        }
+
+        @keyframes primary500 {
+            from {
+                left: 0%
+            }
+    
+            to {
+                left: -400%
+            }
+        }
+}
+
+@media screen and (min-width: 640px) {
+    .primary {
+            animation: primary640 30s linear infinite;
+        }
+
+        @keyframes primary640 {
+            from {
+                left: 0%
+            }
+    
+            to {
+                left: -310%
+            }
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .primary {
+            animation: primary768 20s linear infinite;
+        }
+
+    @keyframes primary768 {
+            from {
+                left: 0%
+            }
+        
+            to {
+                left: -240%
+            }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .primary {
+            animation: primary1024 30s linear infinite;
+        }
+
+        @keyframes primary1024 {
+            from {
+                left: 0%
+            }
+    
+            to {
+                left: -150%
+            }
+        }
+}
+
+@media screen and (min-width: 1280px) {
+    .primary {
+        animation: primary1280 20s linear infinite;
+    }
+
+    @keyframes primary1280 {
+        from {
+            left: 0%
+        }
+
+        to {
+            left: -55%
+        }
+    }
+}
+    

@@ -1,0 +1,20 @@
+.scroll--dec::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #7e8896aa;
+}
+
+.scroll--dec::-webkit-scrollbar-thumb {
+    background: #EB6E4B;
+    border-radius: 10px;
+    display:block;
+}
+
+.scroll--dec::-webkit-scrollbar-corner {
+    display: none;
+}
+
+.text-shadow--white {
+    text-shadow: 2px 2px 5px white;
+}
+
