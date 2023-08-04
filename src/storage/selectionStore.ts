@@ -20,8 +20,8 @@ const initSelection = {
 export type coordsType = {
   lat: number | undefined;
   lon: number | undefined;
-  name: string | undefined;
-  local_name: string | undefined;
+  name: string | undefined | any;
+  local_name: string | undefined | any;
 };
 
 export type dataType = {

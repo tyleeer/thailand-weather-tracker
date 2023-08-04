@@ -110,14 +110,16 @@ export const SearchBar = () => {
               );
 
             if (response.status === 200) {
-              setCoordSelected({
-                lat: lat,
-                lon: lng,
-                name: response.data[0].name,
-                local_name:
-                  response.data[0]?.local_names.th ||
-                  response.data[0]?.local_names.en,
-              });
+              if (response.data) {
+                setCoordSelected({
+                  lat: lat,
+                  lon: lng,
+                  name: response.data[0].name,
+                  local_name:
+                    response.data[0]?.local_names.th ||
+                    response.data[0]?.local_names.en,
+                });
+              }
             } else if (response.status === 401) {
               shownAlert(
                 "Please contact the project owner and try again next time. Sorry for any inconvenience."

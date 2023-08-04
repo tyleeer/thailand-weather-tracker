@@ -186,7 +186,7 @@ export const useRanking = () => {
       sortSunr,
       sortSuns
     );
-    setAllWeatherData({ data: data, loading: false, error: null });
+    setAllWeatherData({ data: data, loading: false, error: undefined });
   }, [
     filterRegion,
     searchKeyword,

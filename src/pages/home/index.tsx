@@ -60,16 +60,18 @@ const Homepage = () => {
       );
 
       if (response.status === 200) {
-        for (const item of response.data) {
-          if (item.country === "TH") {
-            const arrName = item.name.toLowerCase().split(" ");
-            const arrState = item.state.toLowerCase().split(" ");
+        if (response.data) {
+          for (const item of response.data) {
+            if (item.country === "TH") {
+              const arrName = item.name.toLowerCase().split(" ");
+              const arrState = item.state.toLowerCase().split(" ");
 
-            for (const p of arrName) {
-              if (arrState.find((q) => q.match(p))) {
-                if (!checkRepeated.includes(item.name)) {
-                  checkRepeated.push(item.name);
-                  allLocationData.push(item);
+              for (const p of arrName) {
+                if (arrState.find((q) => q.match(p))) {
+                  if (!checkRepeated.includes(item.name)) {
+                    checkRepeated.push(item.name);
+                    allLocationData.push(item);
+                  }
                 }
               }
             }

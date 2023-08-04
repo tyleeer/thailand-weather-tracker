@@ -85,7 +85,11 @@ const Ranking = () => {
                 shownAlert(
                   "Please contact the project owner and try again next time. Sorry for any inconvenience."
                 );
-                setAllWeatherData({ data: [], loading: false, error: undefined });
+                setAllWeatherData({
+                  data: [],
+                  loading: false,
+                  error: undefined,
+                });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
@@ -96,7 +100,11 @@ const Ranking = () => {
                 shownAlert(
                   "Due to exceeding the requests limitation, please try to access this website tomorrow. Thanks ;D"
                 );
-                setAllWeatherData({ data: [], loading: false, error: undefined });
+                setAllWeatherData({
+                  data: [],
+                  loading: false,
+                  error: undefined,
+                });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
@@ -105,7 +113,11 @@ const Ranking = () => {
                 return;
               } else {
                 shownAlert(dataRespon.error.message);
-                setAllWeatherData({ data: [], loading: false, error: undefined });
+                setAllWeatherData({
+                  data: [],
+                  loading: false,
+                  error: undefined,
+                });
                 setFetchAllWeatherData({
                   data: [],
                   loading: false,
@@ -120,7 +132,11 @@ const Ranking = () => {
     }
 
     setWithExpiry("allThaiProvincesWeather", allProvinceData, 10);
-    setAllWeatherData({ data: allProvinceData, loading: false, error: undefined });
+    setAllWeatherData({
+      data: allProvinceData,
+      loading: false,
+      error: undefined,
+    });
     setFetchAllWeatherData({
       data: allProvinceData,
       loading: false,
@@ -141,16 +157,18 @@ const Ranking = () => {
       );
 
       if (response.status === 200) {
-        for (const item of response.data) {
-          if (item.country === "TH") {
-            const arrName = item.name.toLowerCase().split(" ");
-            const arrState = item.state.toLowerCase().split(" ");
+        if (response.data) {
+          for (const item of response.data) {
+            if (item.country === "TH") {
+              const arrName = item.name.toLowerCase().split(" ");
+              const arrState = item.state.toLowerCase().split(" ");
 
-            for (const p of arrName) {
-              if (arrState.find((q) => q.match(p))) {
-                if (!checkRepeated.includes(item.name)) {
-                  checkRepeated.push(item.name);
-                  allLocationData.push(item);
+              for (const p of arrName) {
+                if (arrState.find((q) => q.match(p))) {
+                  if (!checkRepeated.includes(item.name)) {
+                    checkRepeated.push(item.name);
+                    allLocationData.push(item);
+                  }
                 }
               }
             }
