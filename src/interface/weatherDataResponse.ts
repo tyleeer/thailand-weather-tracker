@@ -17,8 +17,8 @@ export interface weatherDataResponse {
   hourly: Hourly[];
   daily: Daily[];
   alert?: Alert;
-  name: string;
-  local_name: string;
+  name?: string;
+  local_name?: string;
 }
 
 export interface Alert {

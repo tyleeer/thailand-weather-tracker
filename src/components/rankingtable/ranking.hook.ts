@@ -1,8 +1,5 @@
 import { weatherDataResponse } from "@/interface/weatherDataResponse";
-import {
-  allWeatherDataType,
-  useAllWeatherDataStore,
-} from "@/storage/allWeatherDataStore";
+import { useAllWeatherDataStore } from "@/storage/allWeatherDataStore";
 import { sortOptionsType, useSortingStore } from "@/storage/sortingStore";
 import { regionStore } from "@/utils/province";
 import { useEffect } from "react";
@@ -21,18 +18,15 @@ export const useRanking = () => {
   const searchKeyword = watch("searchKeyword");
   const filterRegion = watch("filterRegion");
 
-  const { allWeatherData, setAllWeatherData, fetchAllWeatherData } =
-    useAllWeatherDataStore();
+  const { setAllWeatherData, fetchAllWeatherData } = useAllWeatherDataStore();
 
-  function dltsomestr(name: string) {
-    const dlted = name
-      .replace("town", "")
+  function dltsomestr(name: string | undefined) {
+    return name
+      ?.replace("town", "")
       .replace("city", "")
       .replace("municipality", "")
       .replace("-", " ")
       .trim();
-
-    return dlted;
   }
 
   // const setData = (province: string[]) => {
@@ -72,11 +66,11 @@ export const useRanking = () => {
         for (const name of item.province) {
           fetchAllWeatherData.data?.filter((item) => {
             const fetchName = dltsomestr(item.name)
-              .toLowerCase()
+              ?.toLowerCase()
               .replace(/ /g, "");
             const inputName = name.toLowerCase().replace(/ /g, "");
 
-            if (fetchName.includes(inputName)) {
+            if (fetchName?.includes(inputName)) {
               provincesWeatherData.push(item);
             }
           });
@@ -87,11 +81,11 @@ export const useRanking = () => {
     const result = provincesWeatherData.filter(
       (i) =>
         dltsomestr(i.name)
-          .toLowerCase()
+          ?.toLowerCase()
           .replace(/ /g, "")
           .includes(keyword?.toLowerCase().replace(/ /g, "")) ||
         dltsomestr(i.local_name)
-          .toLowerCase()
+          ?.toLowerCase()
           .replace(/ /g, "")
           .includes(keyword?.toLowerCase().replace(/ /g, ""))
     );
@@ -107,16 +101,20 @@ export const useRanking = () => {
       }
 
       if (sortn.ascending === "on") {
-        const sortedn = data?.sort((a, b) =>
-          a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-        );
+        const sortedn = data?.sort((a, b) => {
+          if (a.name && b.name) {
+            return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+          } else return 0;
+        });
         return updateSortTemp(sortedn, temp);
       }
 
       if (sortn.descending === "on") {
-        const sortedn = data?.sort((a, b) =>
-          a.name > b.name ? -1 : a.name > b.name ? 1 : 0
-        );
+        const sortedn = data?.sort((a, b) => {
+          if (a.name && b.name) {
+            return a.name > b.name ? -1 : a.name > b.name ? 1 : 0;
+          } else return 0;
+        });
         return updateSortTemp(sortedn, temp);
       }
     }
@@ -224,14 +222,6 @@ export const useRanking = () => {
     sortSunr,
     sortSuns,
   ]);
-
-  // useEffect(() => {
-  //   for (const item of regionStore) {
-  //     if (filterRegion == item.name) {
-  //       setData(item.province);
-  //     }
-  //   }
-  // }, [filterRegion]);
 
   return {
     fieldSearchKeyword: register("searchKeyword"),

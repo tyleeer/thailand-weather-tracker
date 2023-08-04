@@ -37,9 +37,10 @@ type attrType = { hourly: Hourly[]; daily: Daily[] };
 export const HourlyForcast = ({ hourly, daily }: attrType) => {
   const twentyfourHourData: Hourly[] | sunEvent[] = [];
   const hourNewData: Hourly[] | sunEvent[] = [];
-  const [hourData, setHourData] = useState<Hourly[] | sunEvent[] | undefined>(
-    undefined
-  );
+  const [hourData, setHourData] = useState<any>(undefined);
+  // const [hourData, setHourData] = useState<Hourly[] | sunEvent[] | undefined>(
+  //   undefined
+  // );
 
   const today = daily[0];
   const tomorrow = daily[1];
@@ -95,7 +96,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
         </span>
         <div className="flex">
           {hourData &&
-            hourData.map((i, index) => {
+            hourData.map((i: any, index: any) => {
               const timetitle = hourTime(i.dt);
               const suntimetitle = hourAndMinTime(i.dt);
               return (
@@ -153,7 +154,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
         <div className="flex lg:hidden gap-2">
           <div className="grid grid-rows-2 grid-cols-6 gap-y-4 snap-center">
             {hourData &&
-              hourData.map((i, index) => {
+              hourData.map((i: any, index: any) => {
                 const timetitle = hourTime(i.dt);
                 const suntimetitle = hourAndMinTime(i.dt);
                 if (index < 12) {
@@ -208,7 +209,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
           </div>
           <div className="grid grid-rows-2 grid-cols-6 gap-y-4 snap-center">
             {hourData &&
-              hourData.map((i, index) => {
+              hourData.map((i: any, index: any) => {
                 const timetitle = hourTime(i.dt);
                 const suntimetitle = hourAndMinTime(i.dt);
                 if (index >= 12 && index < 24) {
@@ -263,7 +264,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
           </div>
           <div className="grid grid-rows-2 grid-cols-1 gap-y-4 snap-center">
             {hourData &&
-              hourData.map((i, index) => {
+              hourData.map((i: any, index: any) => {
                 const timetitle = hourTime(i.dt);
                 const suntimetitle = hourAndMinTime(i.dt);
                 if (index >= 24) {
@@ -323,7 +324,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
         <div className="hidden lg:flex gap-2">
           <div className="grid grid-rows-2 grid-cols-8 gap-y-4 snap-center">
             {hourData &&
-              hourData.map((i, index) => {
+              hourData.map((i: any, index: any) => {
                 const timetitle = hourTime(i.dt);
                 const suntimetitle = hourAndMinTime(i.dt);
                 if (index < 16) {
@@ -378,7 +379,7 @@ export const HourlyForcast = ({ hourly, daily }: attrType) => {
           </div>
           <div className="grid grid-rows-2 grid-cols-8 gap-y-4 snap-start">
             {hourData &&
-              hourData.map((i, index) => {
+              hourData.map((i: any, index: any) => {
                 const timetitle = hourTime(i.dt);
                 const suntimetitle = hourAndMinTime(i.dt);
                 if (index >= 11) {

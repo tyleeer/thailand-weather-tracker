@@ -57,12 +57,12 @@ export const DailyForcast = ({ daily }: attrType) => {
             return (
               <div
                 key={index}
-                className="collapse-title flex justify-between items-center px-2 border-b-2 border-b-gray-400 last:border-none"
+                className="collapse-title flex w-full items-center px-2 border-b-2 border-b-gray-400 last:border-none"
               >
-                <div className="uppercase font-semibold">
+                <div className="w-[15%] uppercase font-semibold">
                   {index === 0 ? "today" : dayDate}
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="w-[15%] flex flex-col items-center">
                   <img
                     title={i.weather[0].description}
                     src={`https://openweathermap.org/img/wn/${i.weather[0].icon}@2x.png`}
@@ -70,11 +70,11 @@ export const DailyForcast = ({ daily }: attrType) => {
                   />
                   {i.weather[0].main.toLowerCase().includes("rain") ? (
                     <span className="text-[0.8rem] -translate-y-2">
-                      {i.pop.toFixed(1) * 100}%
+                      {i.pop * 100}%
                     </span>
                   ) : null}
                 </div>
-                <div className="relavtive flex flex-col items-center">
+                <div className="w-[70%] relavtive flex flex-col items-center">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-[1.2rem] text-slate-500">
                       {i.temp.min.toFixed(0)}°
@@ -127,7 +127,7 @@ export const DailyForcast = ({ daily }: attrType) => {
                     />
                     {i.weather[0].main.toLowerCase().includes("rain") ? (
                       <span className="text-[0.8rem] -translate-y-2 font-semibold">
-                        {i.pop.toFixed(1) * 100}%
+                        {i.pop * 100}%
                       </span>
                     ) : null}
                   </div>

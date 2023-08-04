@@ -5,8 +5,8 @@ import { responseHandler } from "@/utils/handleResponse";
 
 interface getWeatherDataServiceResponse {
   status: number | undefined;
-  data: weatherDataResponse;
-  error: AxiosResponse | AxiosError<AxiosResponse> | undefined;
+  data: weatherDataResponse | any;
+  error: AxiosResponse | AxiosError<AxiosResponse> | undefined | any;
 }
 
 export const weatherDataService = {

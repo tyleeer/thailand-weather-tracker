@@ -62,9 +62,9 @@ const RandomWeather = ({ showDetail }: attrType) => {
     setWeatherData({ data: randWeatheData, loading: false, error: null });
   };
 
-  function rename(n: string) {
+  function rename(n: string | undefined) {
     return n
-      .toLowerCase()
+      ?.toLowerCase()
       .replace("city", "")
       .replace("municipality", "")
       .replace("town", "")
@@ -72,7 +72,12 @@ const RandomWeather = ({ showDetail }: attrType) => {
       .trim();
   }
 
-  function setCoords(lat: number, lon: number, name: string, lcname: string) {
+  function setCoords(
+    lat: number,
+    lon: number,
+    name: string | undefined,
+    lcname: string | undefined
+  ) {
     setCoordSelected({
       lat: lat,
       lon: lon,
