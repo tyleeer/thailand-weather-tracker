@@ -332,7 +332,7 @@ const Ranking = () => {
       )}
       <div
         id="alert__container"
-        className="w-[100dvw] z-20 fixed -top-[20%] transition-all duration-500 ease-out"
+        className="w-[100dvw] z-20 fixed -top-[50%] transition-all duration-500 ease-out"
       >
         <Alert />
       </div>

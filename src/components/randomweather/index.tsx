@@ -135,7 +135,7 @@ const RandomWeather = ({ showDetail }: attrType) => {
   return (
     <div className="z-[1] w-full overflow-hidden">
       <div className="text-shadow--black px-2 w-full h-[15%] text-white font-semibold text-[1.7rem]">
-        Current Weather in Thailand
+        {weatherData.data && "Current Weather in Thailand"}
       </div>
       <div className="scroll-parent h-[85%] min-h-[245px] w-full">
         {!weatherData.loading ? (

@@ -318,7 +318,7 @@ const History = () => {
     >
       <div
         id="alert__container"
-        className="w-[100dvw] z-20 fixed -top-[20%] transition-all duration-500 ease-out"
+        className="w-[100dvw] z-20 fixed -top-[50%] transition-all duration-500 ease-out"
       >
         <Alert />
       </div>
@@ -389,11 +389,14 @@ const History = () => {
           </button>
           <div className="absolute w-full sm:w-[95%] bottom-4 right-4 flex flex-col items-end sm:flex-row sm:justify-between sm:right-0 sm:left-6">
             <div className="flex-1 flex gap-2 w-[90%] justify-center sm:justify-normal">
-              <input
-                type="date"
-                id="history_date"
-                className="h-[45px] rounded-full px-5"
-              />
+              <div className="flex gap-1 items-center">
+                <span>Date:</span>
+                <input
+                  type="date"
+                  id="history_date"
+                  className="h-[45px] rounded-full px-5"
+                />
+              </div>
               <button
                 type="submit"
                 onClick={(e) => getHistoricalData(e)}

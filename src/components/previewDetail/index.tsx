@@ -85,7 +85,7 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
   return (
     <div
       id="selection__container"
-      className="w-full max-h-[580px] z-10 absolute top-[30%] flex justify-center items-start"
+      className="w-full max-h-[580px] z-10 absolute top-[25%] flex justify-center items-start"
     >
       {fetchDataSelected.loading ? (
         <div className="m-auto">

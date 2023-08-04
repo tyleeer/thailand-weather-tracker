@@ -150,7 +150,7 @@ export function reName(name: string | undefined) {
 export function clearAlert() {
   const alert = document.getElementById("alert__container");
   alert?.classList.remove("top-[5%]");
-  alert?.classList.add("-top-[20%]");
+  alert?.classList.add("-top-[50%]");
 }
 
 export function shownAlert(message: string) {
@@ -159,6 +159,6 @@ export function shownAlert(message: string) {
     "alert__message"
   ) as HTMLSpanElement;
   alertMessage.innerText = message;
-  alert?.classList.remove("-top-[20%]");
+  alert?.classList.remove("-top-[50%]");
   alert?.classList.add("top-[5%]");
 }
