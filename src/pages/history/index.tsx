@@ -325,7 +325,7 @@ const History = () => {
       <div className="-z-10 w-[100dvw] flex h-[100dvh] fixed top-0">
         <Background />
       </div>
-      <div className="sticky top-0 z-10 h-[15%] initiator starting__animation--first">
+      <div className="sticky top-0 z-10 h-[15%] min-h-[100px] initiator starting__animation--first">
         <Banner trackPage={"historyPage"} />
       </div>
       <div className="w-full min-h-[80%] flex flex-col gap-2 px-[2dvw] sm:px-[10dvw] pt-[1dvw] pb-[2dvw] initiator starting__animation--second">

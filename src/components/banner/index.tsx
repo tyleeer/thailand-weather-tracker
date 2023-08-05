@@ -8,13 +8,13 @@ export const Banner = ({ trackPage }: { trackPage: string }) => {
       className={`relative navbar w-full h-full text-white p-[20px] transition-all`}
     >
       <div className="navbar-start p-2">
-        <Link to="/thailand-weather-tracker/">
+        <a target="_blank" href="https://openweathermap.org/">
           <img
             src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png"
             alt="OpenWheather_logo"
             className="absolute -top-10 -left-16 m-0 p-0 w-[431px] min-w-[172px] h-[184px] scale-[40%] hover:scale-[45%] active:scale-[40%] transition ease-out duration-500"
           />
-        </Link>
+        </a>
       </div>
       <div className="navbar-end absolute right-[10%]">
         <div className="dropdown relative">

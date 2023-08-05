@@ -2,8 +2,8 @@ import nightSky from "@/img/night_sky.jpg";
 import "./index.css";
 
 export const Background = () => {
-  const isEvening =
-    Number(new Date().toLocaleTimeString().substring(0, 2)) > 19;
+  const hourNow = Number(new Date().toLocaleTimeString().substring(0, 2));
+  const isEvening = hourNow > 19 || (hourNow >= 0 && hourNow < 6);
 
   return (
     <>

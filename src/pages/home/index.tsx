@@ -136,7 +136,6 @@ const Homepage = () => {
   };
 
   function showDetailHanddler(action: string) {
-    // showDetail === "on" ? setShowDetail("off") : setShowDetail("on");
     const startingCompoonents = document.getElementsByClassName(
       "starting__animation--second"
     );

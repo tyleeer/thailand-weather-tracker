@@ -339,7 +339,7 @@ const Ranking = () => {
       <div className="-z-10 w-[100dvw] flex h-[100dvh] fixed top-0">
         <Background />
       </div>
-      <div className="h-[13%] sticky top-0 z-10 initiator starting__animation--first">
+      <div className="h-[13%] min-h-[100px] sticky top-0 z-10 initiator starting__animation--first">
         <Banner trackPage={"rankingPage"} />
       </div>
       <div className="sm:p-[20px] min-h-[80%] justify-center items-center">

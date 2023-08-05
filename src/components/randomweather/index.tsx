@@ -87,10 +87,8 @@ const RandomWeather = ({ showDetail }: attrType) => {
   }
 
   function toCard() {
-    const selection__container = document.getElementById(
-      "selection__container"
-    );
-    selection__container?.scrollIntoView();
+    const container = document.getElementById("weather__container");
+    container?.scrollIntoView();
   }
 
   function denyMessage() {
@@ -133,7 +131,7 @@ const RandomWeather = ({ showDetail }: attrType) => {
   }, []);
 
   return (
-    <div className="z-[1] w-full overflow-hidden">
+    <div className="z-[1] w-full overflow-hidden scroll-smooth">
       <div className="text-shadow--black px-2 w-full h-[15%] text-white font-semibold text-[1.7rem]">
         {weatherData.data && "Current Weather in Thailand"}
       </div>
@@ -163,13 +161,13 @@ const RandomWeather = ({ showDetail }: attrType) => {
                         alt={`weather_${i.current.weather[0].main}`}
                       />
                       <div className="w-full flex flex-col justify-center items-center">
-                        <div className="text-[0.5rem] text-[rgb(0,0,0,0.6)]">
+                        <div className="text-[0.7rem] text-[rgb(0,0,0,0.6)]">
                           H: {i.daily[0].temp.max}°C
                         </div>
                         <div className="text-[2rem] font-semibold">
                           {i.current.temp.toFixed(0)}°C
                         </div>
-                        <div className="text-[0.5rem] text-[rgb(0,0,0,0.6)]">
+                        <div className="text-[0.7rem] text-[rgb(0,0,0,0.6)]">
                           L: {i.daily[0].temp.min}°C
                         </div>
                       </div>

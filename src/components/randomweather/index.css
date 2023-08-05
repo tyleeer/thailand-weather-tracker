@@ -21,7 +21,7 @@
 }
 
 .primary {
-    animation: primary0 40s linear infinite;
+    animation: primary0 35s linear infinite;
 }
 
 @keyframes primary0 {
@@ -30,7 +30,7 @@
     }
 
     to {
-        left: -570%
+        left: -480%
     }
 }
 
@@ -77,7 +77,7 @@
             }
         
             to {
-                left: -240%
+                left: -225%
             }
     }
 }
@@ -100,6 +100,22 @@
 
 @media screen and (min-width: 1280px) {
     .primary {
+        animation: primary1280 25s linear infinite;
+    }
+
+    @keyframes primary1280 {
+        from {
+            left: 0%
+        }
+
+        to {
+            left: -100%
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .primary {
         animation: primary1280 20s linear infinite;
     }
 
@@ -109,7 +125,7 @@
         }
 
         to {
-            left: -55%
+            left: -75%
         }
     }
 }

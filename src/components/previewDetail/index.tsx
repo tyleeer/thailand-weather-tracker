@@ -83,12 +83,9 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
   }, [lat, lon]);
 
   return (
-    <div
-      id="selection__container"
-      className="w-full max-h-[580px] z-10 absolute top-[25%] flex justify-center items-start"
-    >
+    <div id="selection__container" className="w-full z-10">
       {fetchDataSelected.loading ? (
-        <div className="m-auto">
+        <div className="pt-[20%] min-h-[400px]">
           <ReactLoading
             type={"spin"}
             color={"#EA6E4B"}
@@ -112,9 +109,15 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
                 className={`relative shadow-xl shadow-[rgba(0,0,0,0.3)] mt-[4%] sm:mt-[4%] md:mt-[1%] w-[80%] max-w-[400px] flex flex-col items-center ${i.color} ${fontColor} rounded-[5%] p-5`}
               >
                 <div className="w-full">
-                  <span className="capitalize font-semibold text-[2rem]">
-                    {reName(coordSelected.name)}
-                  </span>
+                  {reName(coordSelected.name).length > 8 ? (
+                    <span className="capitalize font-semibold text-[1.5rem]">
+                      {reName(coordSelected.name)}
+                    </span>
+                  ) : (
+                    <span className="capitalize font-semibold text-[2rem]">
+                      {reName(coordSelected.name)}
+                    </span>
+                  )}
                 </div>
                 <img className="w-[200px] h-[200px]" src={i.pic} />
                 <div className="flex -translate-y-10">
@@ -187,7 +190,7 @@ export const PreviewDetail = ({ showDetail }: attrType) => {
                 </span>
                 <Link
                   to={"/thailand-weather-tracker/"}
-                  className="absolute top-3 right-3"
+                  className="absolute top-5 right-5"
                   onClick={() => {
                     showDetail("close"), clearSelection();
                   }}

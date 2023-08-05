@@ -30,7 +30,10 @@
     height: 0;
     opacity: 0;
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
     margin: auto;
+    max-height: 580px;
 }
 
 #weather__container {
@@ -40,7 +43,6 @@
 #search__container {
     height: 100%;
     padding-top: 25%
-    
 }
 
 .fadeIn {
@@ -52,6 +54,7 @@
 }
 
 .expand {
+    min-height: 680px;
     animation: expandHeight 0.5s ease-out 0.5s forwards;
 }
 
@@ -117,7 +120,7 @@
         }
         @keyframes fadeIn {
             to {
-                padding-top: 0%;
+                padding-top: 5%;
                 height: 85%;
                 width: 100%;
                 opacity: 1;
@@ -138,7 +141,7 @@
         }
         @keyframes fadeIn {
             to {
-                padding-top: 1%;
+                padding-top: 5%;
                 height: 85%;
                 width: 100%;
                 opacity: 1;
