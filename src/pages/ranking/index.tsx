@@ -343,7 +343,7 @@ const Ranking = () => {
         <Banner trackPage={"rankingPage"} />
       </div>
       <div className="sm:p-[20px] min-h-[80%] justify-center items-center">
-        <div className="scroll--dec m-auto p-[5px] max-h-[350px] mb-[10px] w-full bg-[rgb(255,255,255,0.8)] sm:rounded-[10px] overflow-x-auto initiator starting__animation--second">
+        <div className="scroll--dec m-auto p-[5px] max-h-[350px] mb-[10px] w-full bg-[rgb(255,255,255,0.8)] sm:rounded-[10px] initiator starting__animation--second">
           <Watchlist />
         </div>
         <div className="scroll--dec m-auto px-1 bg-[rgb(255,255,255,0.8)] w-full sm:rounded-[10px] overflow-x-auto initiator starting__animation--third">

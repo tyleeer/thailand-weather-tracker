@@ -21,111 +21,125 @@
 }
 
 .primary {
-    animation: primary0 35s linear infinite;
+    animation: primary0 70s linear infinite;
 }
 
 @keyframes primary0 {
-    from {
+    0% {
         left: 0%
     }
-
-    to {
+    50% {
         left: -480%
+    }
+    100% {
+        left: 0%
     }
 }
 
 @media screen and (min-width: 500px) {
     .primary {
-            animation: primary500 30s linear infinite;
+            animation: primary500 60s linear infinite;
         }
 
         @keyframes primary500 {
-            from {
+            0% {
                 left: 0%
             }
-    
-            to {
+            50% {
                 left: -400%
+            }
+            100% {
+                left: 0%
             }
         }
 }
 
 @media screen and (min-width: 640px) {
     .primary {
-            animation: primary640 30s linear infinite;
+            animation: primary640 60s linear infinite;
         }
 
         @keyframes primary640 {
-            from {
+            0% {
                 left: 0%
             }
-    
-            to {
+            50% {
                 left: -310%
+            }
+            100% {
+                left: 0%
             }
         }
 }
 
 @media screen and (min-width: 768px) {
     .primary {
-            animation: primary768 20s linear infinite;
+            animation: primary768 40s linear infinite;
         }
 
     @keyframes primary768 {
-            from {
+            0% {
                 left: 0%
             }
-        
-            to {
+            50% {
                 left: -225%
+            }
+            100% {
+                left: 0%
             }
     }
 }
 
 @media screen and (min-width: 1024px) {
     .primary {
-            animation: primary1024 30s linear infinite;
+            animation: primary1024 60s linear infinite;
         }
 
         @keyframes primary1024 {
-            from {
+            0% {
                 left: 0%
             }
-    
-            to {
+            50% {
                 left: -150%
+            }
+            100% {
+                left: 0%
             }
         }
 }
 
 @media screen and (min-width: 1280px) {
     .primary {
-        animation: primary1280 25s linear infinite;
+        animation: primary1280 50s linear infinite;
     }
 
     @keyframes primary1280 {
-        from {
+        0% {
             left: 0%
         }
-
-        to {
+        50% {
             left: -100%
+        }
+        100% {
+            left: 0%
         }
     }
 }
 
 @media screen and (min-width: 1440px) {
     .primary {
-        animation: primary1280 20s linear infinite;
+        animation: primary1280 40s linear infinite;
     }
 
     @keyframes primary1280 {
-        from {
+        0% {
             left: 0%
         }
-
-        to {
+        50% {
             left: -75%
+        }
+        100% {
+            left: 0%
         }
     }
 }

@@ -198,14 +198,14 @@ export const RankingTable = () => {
       <div className="w-full">
         <table className="w-full my-[10px] outline-none">
           <thead>
-            <tr className="border border-b-black">
-              <th className="p-1 border border-black font-normal text-[1px]">
+            <tr className="border-b-[1px] border-b-black">
+              <th className="p-1 font-normal text-[1px]">
                 {/* (add watchlist) */}
               </th>
-              <th className="p-1 border border-black">
+              <th className="p-1">
                 <button
                   type="button"
-                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110"
+                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110 transition-all"
                   onClick={() => sortNameHanddler()}
                 >
                   <div className="flex items-center gap-[5px]">
@@ -226,10 +226,10 @@ export const RankingTable = () => {
                   </div>
                 </button>
               </th>
-              <th className="p-1 border border-black">
+              <th className="p-1">
                 <button
                   type="button"
-                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110"
+                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110 transition-all"
                   onClick={() => sortTempHanddler()}
                 >
                   <div className="flex items-center gap-[5px]">
@@ -250,10 +250,10 @@ export const RankingTable = () => {
                   </div>
                 </button>
               </th>
-              <th className="p-1 border border-black">
+              <th className="p-1">
                 <button
                   type="button"
-                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110"
+                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110 transition-all"
                   onClick={() => sortHumiHanddler()}
                 >
                   <div className="flex items-center gap-[5px]">
@@ -268,10 +268,10 @@ export const RankingTable = () => {
                   </div>
                 </button>
               </th>
-              <th className="p-1 border border-black">
+              <th className="p-1">
                 <button
                   type="button"
-                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110"
+                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110 transition-all"
                   onClick={() => sortSunrHanddler()}
                 >
                   <div className="flex items-center gap-[5px]">
@@ -286,10 +286,10 @@ export const RankingTable = () => {
                   </div>
                 </button>
               </th>
-              <th className="p-1 border border-black">
+              <th className="p-1">
                 <button
                   type="button"
-                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110"
+                  className="w-full flex justify-center hover:text-[rgb(234,110,75)] active:scale-105 hover:scale-110 transition-all"
                   onClick={() => sortSunsHanddler()}
                 >
                   <div className="flex items-center gap-[5px]">
@@ -304,14 +304,18 @@ export const RankingTable = () => {
                   </div>
                 </button>
               </th>
-              <th className="p-1 border border-black">Weather</th>
+              <th className="p-1">Weather</th>
             </tr>
           </thead>
           <tbody>
             {allWeatherData.data?.map((i, index) => {
               return (
-                <tr key={index} className="text-center text-[0.8rem]">
-                  <td className="border border-black">
+                <tr
+                  key={index}
+                  className="text-center text-[0.8rem] even:bg-[rgb(255,255,255,0.7)]"
+                >
+                  {/* <td className="border-r-[1px] border-slate-600"> */}
+                  <td>
                     {!watchlist.data?.find((item) => item.name === i.name) ? (
                       <button
                         onClick={() => addWatchlist(i)}
@@ -329,7 +333,7 @@ export const RankingTable = () => {
                       />
                     )}
                   </td>
-                  <td className="border border-black capitalize">
+                  <td className="capitalize">
                     {i.name
                       ?.toLowerCase()
                       .replace("city", "")
@@ -338,21 +342,19 @@ export const RankingTable = () => {
                       .replace("-", " ")
                       .trim()}
                   </td>
-                  <td className="border border-black">{i.current.temp} °C</td>
-                  <td className="border border-black">
-                    {i.current.humidity} %
-                  </td>
-                  <td className="border border-black">
+                  <td>{i.current.temp} °C</td>
+                  <td>{i.current.humidity} %</td>
+                  <td>
                     {new Date(i.current.sunrise * 1000).toLocaleTimeString(
                       "en-TH"
                     )}
                   </td>
-                  <td className="border border-black">
+                  <td>
                     {new Date(i.current.sunset * 1000).toLocaleTimeString(
                       "en-TH"
                     )}
                   </td>
-                  <td className="border border-black">
+                  <td>
                     <img
                       title={i.current.weather[0].description}
                       src={`https://openweathermap.org/img/wn/${i.current.weather[0].icon}@2x.png`}

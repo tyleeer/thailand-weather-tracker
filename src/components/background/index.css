@@ -1,72 +1,77 @@
 .primary--bg {
-    animation: primary 50s linear infinite;
+    animation: primary 100s linear infinite;
 }
 
 .secondary--bg {
-    animation: secondary 50s linear infinite;
+    animation: secondary 100s linear infinite;
 }
 
 .primary--bg__phone {
     scale: 150%;
-    animation: primary 15s linear infinite;
+    animation: primary 30s linear infinite;
 }
 
 .secondary--bg__phone {
     scale: 150%;
-    animation: secondary 15s linear infinite;
+    animation: secondary 30s linear infinite;
 }
 
 .primary--bg__additional {
-    animation: primary 20s linear infinite;
+    animation: primary 40s linear infinite;
 }
 
 .secondary--bg__additional {
-    animation: secondary 20s linear infinite;
+    animation: secondary 40s linear infinite;
 }
 
 .primary--bg2 {
-    animation: primary 100s linear infinite;
-}
-
-.primary--bg2__phone {
-    animation: primary 25s linear infinite;
-}
-
-.primary--bg3 {
     animation: primary 200s linear infinite;
 }
 
+.primary--bg2__phone {
+    animation: primary 50s linear infinite;
+}
+
+.primary--bg3 {
+    animation: primary 300s linear infinite;
+}
+
 .primary--bg3__phone {
-    animation: primary 35s linear infinite;
+    animation: primary 70s linear infinite;
 }
 
 .secondary--bg3__phone {
-    animation: secondary 35s linear infinite;
+    animation: secondary 70s linear infinite;
 }
 
 .secondary--bg2 {
-    animation: secondary 100s linear infinite;
+    animation: secondary 200s linear infinite;
 }
 
 .secondary--bg2__phone {
-    animation: secondary 25s linear infinite;
+    animation: secondary 50s linear infinite;
 }
 
 @keyframes primary {
-    from {
+    0% {
         left: 0%
     }
-
-    to {
+    50% {
         left: -100%
+    }
+    100% {
+        left: 0%
     }
 }
 
 @keyframes secondary {
-    from {
+    0% {
         left: 100%
     }
-    to {
+    50% {
         left: 0%
+    }
+    100% {
+        left: 100%
     }
 }
