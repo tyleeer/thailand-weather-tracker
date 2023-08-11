@@ -7,7 +7,7 @@ The Thailand Weather App project is a website development project where I create
 <p><b>Weather API: </b><a href="https://openweathermap.org/">OpenWeather</a></p>
 
 ## Screenshots
-<h3>Homepage:</h3>
+<h3>- Homepage:</h3>
 <div style="display: flex;">
 <img src="/src/img/previewimgs/homepage.png" style="width: 70%">
 <img src="/src/img/previewimgs/homepage--mobile.png" style="width: 25%">
@@ -18,20 +18,20 @@ The Thailand Weather App project is a website development project where I create
 </div>
 
 
-<h3>Current&Forcast Weather page:</h3>
+<h3>- Current&Forcast Weather page:</h3>
 <div style="display: flex;">
 <img src="/src/img/previewimgs/detailpage.png" style="width: 70%">
 <img src="/src/img/previewimgs/detailpage--mobile.png" style="width: 25%">
 </div>
 
 
-<h3>Weather History page:</h3>
+<h3>- Weather History page:</h3>
 <div style="display: flex;">
 <img src="/src/img/previewimgs/historypage.png" style="width: 70%">
 <img src="/src/img/previewimgs/historypage--mobile.png" style="width: 25%">
 </div>
 
-<h3>Weather Ranking page:</h3>
+<h3>- Weather Ranking page:</h3>
 <div style="display: flex;">
 <img src="/src/img/previewimgs/rankingpage.png" style="width: 70%">
 <img src="/src/img/previewimgs/rankingpage--mobile.png" style="width: 25%">
