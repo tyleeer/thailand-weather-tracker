@@ -17,11 +17,11 @@ The Thailand Weather App project is a website development project where I create
 </div>
 <img src="/src/img/previewimgs/rankingpage.png" style="width: 45%">
 <div style="display: flex">
-<img src="/src/img/previewimgs/homepage--mobile.png" style="height: 500px">
-<img src="/src/img/previewimgs/homepage--mobile_popup.png" style="height: 500px">
-<img src="/src/img/previewimgs/detailpage--mobile.png" style="height: 500px">
+<img src="/src/img/previewimgs/homepage--mobile.png" style="width: 30%">
+<img src="/src/img/previewimgs/homepage--mobile_popup.png" style="width: 30%">
+<img src="/src/img/previewimgs/detailpage--mobile.png" style="width: 30%">
 </div>
 <div style="display: flex">
-<img src="/src/img/previewimgs/historypage--mobile.png" style="height: 500px">
-<img src="/src/img/previewimgs/rankingpage--mobile.png" style="height: 500px">
+<img src="/src/img/previewimgs/historypage--mobile.png" style="width: 30%">
+<img src="/src/img/previewimgs/rankingpage--mobile.png" style="width: 30%">
 </div>
